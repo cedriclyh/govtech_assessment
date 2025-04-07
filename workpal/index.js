@@ -6,6 +6,6 @@ app.listen(
     () => console.log(`hello http://localhost:${PORT}`)
 )
 
-app.get('', (req, res) => {
-    
-});
+// app.get('', (req, res) => {
+
+// });
