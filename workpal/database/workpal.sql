@@ -29,7 +29,7 @@ CREATE TABLE Student (
 CREATE TABLE Registration (
     teacher_email VARCHAR(50),
     student_email VARCHAR(50),
-    PRIMARY KEY (teacher_email, student_email)
+    PRIMARY KEY (teacher_email, student_email),
     FOREIGN KEY (teacher_email) REFERENCES Teacher(Email),
     FOREIGN KEY (student_email) REFERENCES Student(Email),
     UNIQUE(teacher_email, student_email)
