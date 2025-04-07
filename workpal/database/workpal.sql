@@ -93,7 +93,10 @@ INSERT INTO Registration (teacher_email, student_email) VALUES
     ('teachermary@gmail.com', 'studentmandy@gmail.com'),
     ('teachermary@gmail.com', 'studentjamie@gmail.com'),
 
+    ('teacherben@gmail.com', 'studentjames@gmail.com'),
     ('teacherben@gmail.com', 'studentharry@gmail.com'),
+    ('teacherben@gmail.com', 'studentjerry@gmail.com'),
+    ('teacherben@gmail.com', 'studentvicky@gmail.com'),
     ('teacherben@gmail.com', 'studentgwen@gmail.com'),
     ('teacherben@gmail.com', 'studentmandy@gmail.com'),
     ('teacherben@gmail.com', 'studentjamie@gmail.com'),
@@ -112,6 +115,13 @@ INSERT INTO Registration (teacher_email, student_email) VALUES
     ('teacherken@gmail.com', 'studentandy@gmail.com'),
     ('teacherken@gmail.com', 'studentjasper@gmail.com'),
 
+    ('teacherchristy@gmail.com', 'studentjay@gmail.com'),
+    ('teacherchristy@gmail.com', 'studentcarol@gmail.com'),
+    ('teacherchristy@gmail.com', 'studentmichael@gmail.com'),
+    ('teacherchristy@gmail.com', 'studentchris@gmail.com'),
+    ('teacherchristy@gmail.com', 'studentandy@gmail.com'),
+    ('teacherchristy@gmail.com', 'studentjasper@gmail.com'),
+
     ('teacherken@gmail.com', 'studentwally@gmail.com'),
     ('teacherken@gmail.com', 'studentadam@gmail.com'),
     ('teacherken@gmail.com', 'studentsilver@gmail.com'),
@@ -119,6 +129,14 @@ INSERT INTO Registration (teacher_email, student_email) VALUES
     ('teacherken@gmail.com', 'studentmay@gmail.com'),
     ('teacherken@gmail.com', 'studentjenny@gmail.com'),
     ('teacherken@gmail.com', 'studentlisa@gmail.com'),
+
+    ('teacherben@gmail.com', 'studentwally@gmail.com'),
+    ('teacherben@gmail.com', 'studentadam@gmail.com'),
+    ('teacherben@gmail.com', 'studentsilver@gmail.com'),
+    ('teacherben@gmail.com', 'studentapril@gmail.com'),
+    ('teacherben@gmail.com', 'studentmay@gmail.com'),
+    ('teacherben@gmail.com', 'studentjenny@gmail.com'),
+    ('teacherben@gmail.com', 'studentlisa@gmail.com'),
 
     ('teacherjacob@gmail.com', 'studentwally@gmail.com'),
     ('teacherjacob@gmail.com', 'studentadam@gmail.com'),
@@ -128,10 +146,10 @@ INSERT INTO Registration (teacher_email, student_email) VALUES
     ('teacherjacob@gmail.com', 'studentjenny@gmail.com'),
     ('teacherjacob@gmail.com', 'studentlisa@gmail.com'),
 
-    ('teacherjacob@gmail.com', 'studentwally@gmail.com'),
-    ('teacherjacob@gmail.com', 'studentadam@gmail.com'),
-    ('teacherjacob@gmail.com', 'studentsilver@gmail.com'),
-    ('teacherjacob@gmail.com', 'studentapril@gmail.com'),
-    ('teacherjacob@gmail.com', 'studentmay@gmail.com'),
-    ('teacherjacob@gmail.com', 'studentjenny@gmail.com'),
-    ('teacherjacob@gmail.com', 'studentlisa@gmail.com');
+    ('teachermary@gmail.com', 'studentwally@gmail.com'),
+    ('teachermary@gmail.com', 'studentadam@gmail.com'),
+    ('teachermary@gmail.com', 'studentsilver@gmail.com'),
+    ('teachermary@gmail.com', 'studentapril@gmail.com'),
+    ('teachermary@gmail.com', 'studentmay@gmail.com'),
+    ('teachermary@gmail.com', 'studentjenny@gmail.com'),
+    ('teachermary@gmail.com', 'studentlisa@gmail.com');
