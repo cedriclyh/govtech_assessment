@@ -58,7 +58,7 @@ exports.processRequest = async (data) => {
         }
       });
     
-      if (studentRecords.length !== students.length) {
+      if (studentRecords.length !== studentEmails.length) {
         throw new Error('One or more students not found');
       }
 
