@@ -10,6 +10,6 @@ exports.suspendStudent = async (req, res) => {
     return res.status(204).send();
   } catch (error) {
     console.error('Error in suspendStudent controller:', error);
-    return res.status(500).json({ message: 'Internal server error' });
+    return res.status(500).json({ message: 'Internal server error: ' + error.message });
   }
 };

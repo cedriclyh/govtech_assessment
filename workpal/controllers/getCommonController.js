@@ -11,7 +11,7 @@ exports.getCommonStudents = async (req, res) => {
     }
 
     if (typeof teacherEmails === 'string') {
-      teacherEmails = [teacherEmails]; // Convert to array if it's a single email
+      teacherEmails = [teacherEmails];
     }
 
     console.log('Teacher emails array:', teacherEmails);
@@ -24,10 +24,10 @@ exports.getCommonStudents = async (req, res) => {
       // Success
       return res.status(200).json({ students: commonStudents });
     } else {
-      return res.status(204).send();  // No common students found
+      return res.status(204).send();
     }
   } catch (error) {
     console.error('Error in getCommonStudents:', error);
-    res.status(500).json({ message: 'Internal server error' });
+    res.status(500).json({ message: 'Internal server error: ' + error.message });
   }
 };
