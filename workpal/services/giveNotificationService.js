@@ -51,13 +51,24 @@ exports.processRequest = async (data) => {
         }
     });
 
+    // check if students exist
+    const studentRecords = await Student.findAll({
+        where: {
+          Email: studentEmails
+        }
+      });
+    
+      if (studentRecords.length !== students.length) {
+        throw new Error('One or more students not found');
+      }
+
     // check if suspended
     let finalList = [];
     try {
         // Query the Students table to get emails where IsSuspended is false
         const students = await Student.findAll({
             where: {
-                email: studentEmails,
+                Email: studentEmails,
                 IsSuspended: false,
             },
             attributes: ['Email'],

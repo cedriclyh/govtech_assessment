@@ -54,19 +54,25 @@ INSERT INTO Student (Email, FName, LName, StudentIndex, Class, IsSuspended) VALU
     ('studentgwen@gmail.com', 'Gwen', 'Pang', 5 ,'1E1', False),
     ('studentmandy@gmail.com', 'Mandy', 'Ong', 6 ,'1E1', False),
     ('studentjamie@gmail.com', 'Jamie', 'Oo', 7 ,'1E1', False),
+
     ('studentjay@gmail.com', 'Jay', 'Koh', 1 ,'1E2', False),
     ('studentcarol@gmail.com', 'Carol', 'Ho', 2 ,'1E2', False),
     ('studentmichael@gmail.com', 'Michael', 'Koh', 3 ,'1E2', False),
     ('studentchris@gmail.com', 'Chris', 'Ho', 4 ,'1E2', False),
     ('studentandy@gmail.com', 'Andy', 'Toh', 5 ,'1E2', False),
     ('studentjasper@gmail.com', 'Jasper', 'Toh', 6 ,'1E2', False),
+    ('studentcedric@gmail.com', 'Cedric', 'Lim', 7, '1E2', True),
+
     ('studentwally@gmail.com', 'Wally', 'Koh', 1 ,'2E1', False),
     ('studentadam@gmail.com', 'Adam', 'Koh', 2 ,'2E1', False),
     ('studentsilver@gmail.com', 'Silver', 'Lim', 3 ,'2E1', False),
     ('studentapril@gmail.com', 'April', 'Lim', 4 ,'2E1', False),
     ('studentmay@gmail.com', 'May', 'Pang', 5 ,'2E1', False),
     ('studentjenny@gmail.com', 'Jenny', 'Ong', 6 ,'2E1', False),
-    ('studentlisa@gmail.com', 'Lisa', 'Zhou', 7 ,'2E1', False);
+    ('studentlisa@gmail.com', 'Lisa', 'Zhou', 7 ,'2E1', False),
+
+    ('studentusher@gmail.com', 'Usher', 'Uwu', 1, '3E1', True),
+    ('studentpitbull@gmail.com', 'Pitbull', 'Fire', 2, '3E1', True);
 
 -- REGISTRATION values
 INSERT INTO Registration (teacher_email, student_email) VALUES
@@ -108,6 +114,7 @@ INSERT INTO Registration (teacher_email, student_email) VALUES
     ('teacherben@gmail.com', 'studentchris@gmail.com'),
     ('teacherben@gmail.com', 'studentandy@gmail.com'),
     ('teacherben@gmail.com', 'studentjasper@gmail.com'),
+    ('teacherben@gmail.com', 'studentcedric@gmail.com'),
 
     ('teacherken@gmail.com', 'studentjay@gmail.com'),
     ('teacherken@gmail.com', 'studentcarol@gmail.com'),
@@ -115,6 +122,7 @@ INSERT INTO Registration (teacher_email, student_email) VALUES
     ('teacherken@gmail.com', 'studentchris@gmail.com'),
     ('teacherken@gmail.com', 'studentandy@gmail.com'),
     ('teacherken@gmail.com', 'studentjasper@gmail.com'),
+    ('teacherken@gmail.com', 'studentcedric@gmail.com'),
 
     ('teacherchristy@gmail.com', 'studentjay@gmail.com'),
     ('teacherchristy@gmail.com', 'studentcarol@gmail.com'),
@@ -122,6 +130,7 @@ INSERT INTO Registration (teacher_email, student_email) VALUES
     ('teacherchristy@gmail.com', 'studentchris@gmail.com'),
     ('teacherchristy@gmail.com', 'studentandy@gmail.com'),
     ('teacherchristy@gmail.com', 'studentjasper@gmail.com'),
+    ('teacherchristy@gmail.com', 'studentcedric@gmail.com'),
 
     ('teacherken@gmail.com', 'studentwally@gmail.com'),
     ('teacherken@gmail.com', 'studentadam@gmail.com'),
@@ -153,4 +162,7 @@ INSERT INTO Registration (teacher_email, student_email) VALUES
     ('teachermary@gmail.com', 'studentapril@gmail.com'),
     ('teachermary@gmail.com', 'studentmay@gmail.com'),
     ('teachermary@gmail.com', 'studentjenny@gmail.com'),
-    ('teachermary@gmail.com', 'studentlisa@gmail.com');
+    ('teachermary@gmail.com', 'studentlisa@gmail.com'),
+
+    ('teacherjacob@gmail.com', 'studentusher@gmail.com'),
+    ('teacherjacob@gmail.com', 'studentpitbull@gmail.com');
