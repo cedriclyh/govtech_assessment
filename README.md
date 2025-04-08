@@ -50,9 +50,9 @@ Workpal is a mobile application designed for public officer employee services. I
 | Method | Endpoint | Description |
 |--------|----------|-------------|
 | POST | `/register` | Register students to a teacher |
-| GET | `/common-students` | Retrieve students common to given teachers |
+| GET | `/commonstudents` | Retrieve students common to given teachers |
 | POST | `/suspend` | Suspend a specified student |
-| GET | `/active-students` | Retrieve students eligible for notifications |
+| GET | `/retrievefornotifications` | Retrieve students eligible for notifications |
 
 ## Testing
 
@@ -60,12 +60,6 @@ Run tests with coverage report:
 
 ```bash
 npx jest --coverage
-```
-
-### Current Coverage
-
-```
-giveNotificationService.js |   97.56 |    66.66 |     100 |   97.36 | 62
 ```
 
 ### Improving Test Coverage
