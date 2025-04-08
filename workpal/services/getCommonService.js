@@ -10,15 +10,13 @@ exports.processRequest = async (teacherEmails) => {
 
     const teacherStudentsMap = {};
 
-    // Iterate through each teacher email
     for (const teacherEmail of teacherEmails) {
-      // Query the Registration table to find all students associated with this teacher
+      // find all students associated with this teacher
       const registrations = await Registration.findAll({
         where: { teacher_email: teacherEmail },
         attributes: ['student_email'],
       });
 
-      // Store the result for this teacher
       teacherStudentsMap[teacherEmail] = registrations.map(registration => registration.student_email);
     }
 
