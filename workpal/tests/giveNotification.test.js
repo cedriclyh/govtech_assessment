@@ -64,7 +64,6 @@ describe('GiveNotificationService', () => {
     expect(result).toEqual(['student1@example.com', 'student2@example.com']);
   });
 
-  // This test requires the bug to be fixed in the implementation
   test('should process notification with @student mentions', async () => {
     // Mock Registration.findAll to return student emails
     Registration.findAll.mockResolvedValue([
@@ -225,5 +224,30 @@ describe('GiveNotificationService', () => {
     expect(Registration.findAll).toHaveBeenCalled();
     expect(Student.findAll).toHaveBeenCalledTimes(2);
     expect(console.error).toHaveBeenCalled();
+  });
+
+  test('should throw error when student is not found', async () => {
+    // Mock Registration.findAll to return student emails
+    Registration.findAll.mockResolvedValue([
+      { student_email: 'student1@example.com' }
+    ]);
+    
+    // Mock Student.findAll to return fewer students than requested
+    Student.findAll.mockResolvedValueOnce([
+      { Email: 'student1@example.com' }
+      // student2@example.com is missing
+    ]);
+    
+    const data = {
+      teacher: 'teacher@example.com',
+      notification: 'Hello @student2@example.com!'
+    };
+    
+    await expect(processRequest(data))
+      .rejects
+      .toThrow('One or more students not found');
+    
+    expect(Registration.findAll).toHaveBeenCalled();
+    expect(Student.findAll).toHaveBeenCalledTimes(1);
   });
 });
