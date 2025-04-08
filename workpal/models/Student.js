@@ -25,6 +25,10 @@ const Student = sequelize.define('Student', {
         type: DataTypes.STRING(50),
         allowNull: false,
       },
+      IsSuspended: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+      }
 }, {
     tableName: 'Student',
     timestamps: false,
