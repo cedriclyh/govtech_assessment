@@ -47,12 +47,14 @@ Workpal is a mobile application designed for public officer employee services. I
 
 ## API Endpoints
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| POST | `/register` | Register students to a teacher |
-| GET | `/commonstudents` | Retrieve students common to given teachers |
-| POST | `/suspend` | Suspend a specified student |
-| GET | `/retrievefornotifications` | Retrieve students eligible for notifications |
+| Method | Endpoint                  | Description                                           |
+|--------|---------------------------|-------------------------------------------------------|
+| POST   | `/register`                | Register students to a teacher                       |
+| GET    | `/commonstudents`          | Retrieve students common to given teachers           |
+| POST   | `/suspend`                 | Suspend a specified student                          |
+| GET    | `/retrievefornotifications`| Retrieve students eligible for notifications         |
+
+For more detailed API documentation, you can refer to the [API Documentation](https://docs.google.com/document/d/1m9R7nmK01g0XzLeWIUsoKzdLrqanKzznUFFAgTMvs48/edit?usp=sharing).
 
 ## Testing
 
