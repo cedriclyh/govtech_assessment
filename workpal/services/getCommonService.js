@@ -1,36 +1,46 @@
-const { sequelize } = require('../config/database');
+const { Sequelize, sequelize } = require('../config/database');  // Import Sequelize correctly
 const { QueryTypes } = require('sequelize');
+const Teacher = require('../models/Teacher');
+const Student = require('../models/Student');
+const Registration = require('../models/Registration');
 
 exports.processRequest = async (teacherEmails) => {
   try {
-    console.log('Processing request for teacher emails:', teacherEmails);
+    console.log('Teacher emails array:', teacherEmails);
 
-    const teacherEmailsString = teacherEmails.join("', '")
-    const teacherEmailCount = teacherEmails.length
+    const teacherStudentsMap = {};
 
-    const inputQuery = `
-      SELECT s.email
-      FROM students s
-      JOIN teacher_student_registration tsr ON s.id = tsr.student_id
-      JOIN teachers t ON tsr.teacher_id = t.id
-      WHERE t.email IN ('${teacherEmailsString}')
-      GROUP BY s.id, s.email
-      HAVING COUNT(DISTINCT t.id) = ${teacherEmailCount}
-    `;
-    
-    console.log('Executing query:', inputQuery);
-    
-    // Execute the query with the replacements for the teacher emails and teacher count
-    const results = await sequelize.query(inputQuery, {
-        type: QueryTypes.SELECT,
-    });
+    // Iterate through each teacher email
+    for (const teacherEmail of teacherEmails) {
+      // Query the Registration table to find all students associated with this teacher
+      const registrations = await Registration.findAll({
+        where: { teacher_email: teacherEmail },
+        attributes: ['student_email'],
+      });
 
-    console.log('Found common students:', results.length);
-    
-    // Return just the student emails
-    return results.map(student => student.email);
+      // Store the result for this teacher
+      teacherStudentsMap[teacherEmail] = registrations.map(registration => registration.student_email);
+    }
+
+    // Count how many times each student appears across all teacher emails
+    const studentOccurrences = {};
+    for (const teacherEmail in teacherStudentsMap) {
+      const students = teacherStudentsMap[teacherEmail];
+      students.forEach(studentEmail => {
+        studentOccurrences[studentEmail] = (studentOccurrences[studentEmail] || 0) + 1;
+      });
+    }
+
+    // Filter students who appear in at least as many teacher lists as there are teacher emails
+    const studentsInMultipleLists = Object.keys(studentOccurrences).filter(
+      studentEmail => studentOccurrences[studentEmail] >= teacherEmails.length
+    );
+
+    // Return the list of students who appear in at least as many teacher's lists as the total count
+    return studentsInMultipleLists;
+
   } catch (error) {
-    console.error('Error processing request:', error);
+    console.error('Error fetching students for teachers:', error);
     throw new Error('Error fetching common students');
   }
 };

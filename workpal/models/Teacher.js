@@ -1,7 +1,9 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
+// const Registration = require('./Registration'); 
+// const Student = require('./Student');
 
-// Define the Teacher model
+// Teacher model
 const Teacher = sequelize.define('Teacher', {
   Email: {
     type: DataTypes.STRING(50),
