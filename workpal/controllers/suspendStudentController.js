@@ -1,11 +1,9 @@
-// controllers/suspendStudentController.js
-const suspendStudentService = require('../services/suspendStudentService'); // Import the service
+const suspendStudentService = require('../services/suspendStudentService');
 
 exports.suspendStudent = async (req, res) => {
   try {
-    const { email } = req.body;  // Get the student's email from the request body
+    const { email } = req.body;
     
-    // Call the service to suspend the student
     await suspendStudentService.suspendStudent(email);
 
     // Respond with HTTP 204 (No Content) on success
